@@ -7,7 +7,14 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb://localhost:27017/notesDB', {
+app.use(cors({
+    origin: 'http://notes.com',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials : true
+}));
+
+mongoose.connect('mongodb+srv://ramanrahul114:September2003@cluster0.4uijx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(()=> console.log("MongoDB connected")).catch((err)=> console.log("Error connecting with MongoDB",err));
