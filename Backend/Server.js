@@ -7,14 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use(cors({
-    origin: '',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials : true
-}));
-
-mongoose.connect('mongodb+srv://ramanrahul114:September2003@cluster0.4uijx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect('mongodb+srv://ramanrahul114:Brrece@2003@quicknotevercel.zsr73.mongodb.net/?retryWrites=true&w=majority&appName=QuickNotevercel', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(()=> console.log("MongoDB connected")).catch((err)=> console.log("Error connecting with MongoDB",err));
