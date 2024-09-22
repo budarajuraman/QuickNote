@@ -11,13 +11,13 @@ function App() {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    axios.get('https://quick-notes-psi.vercel.app/notes')
+    axios.get('http://localhost:5000/notes')
       .then(response => setNotes(response.data))
       .catch(error => console.error('Error fetching notes:', error));
   }, []);
 
   function addNote(newNote) {
-    axios.post('https://quick-notes-psi.vercel.app/notes', newNote)
+    axios.post('http://localhost:5000/notes', newNote)
       .then(response => {
         setNotes(prevNotes => [...prevNotes, response.data]);
       })
@@ -25,7 +25,7 @@ function App() {
   }
 
   function deleteNote(id) {
-    axios.delete(`https://quick-notes-psi.vercel.app/notes/${id}`)
+    axios.delete(`http://localhost:5000/notes/${id}`)
       .then(() => {
         setNotes(prevNotes => prevNotes.filter(note => note._id !== id));
       })
