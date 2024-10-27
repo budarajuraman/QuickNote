@@ -8,7 +8,8 @@ app.use(express.json());
 app.use(cors());
 
 
-mongoose.connect('mongodb+srv://ramanrahul114:Brrece%402003@quicknotevercel.zsr73.mongodb.net/QuickNotevercel?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://ramanrahul114:Brrece@2003@quicknotevercel.zsr73.mongodb.net/?retryWrites=true&w=majority&appName=QuickNotevercel',{useNewUrlParser: true,
+  useUnifiedTopology: true,})
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.log("Error connecting with MongoDB", err));
 
